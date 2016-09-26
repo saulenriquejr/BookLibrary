@@ -36,7 +36,7 @@ function deleteBook(parameter) {
         url: "Home/DeleteBook/" + "?" + $.param({ "Id": parameter }),
         data: { Id: parameter }
     }).done(function (result) {
-        debugger;
+        getAllBooks();
     });
 }
 

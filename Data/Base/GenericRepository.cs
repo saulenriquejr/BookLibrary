@@ -39,19 +39,21 @@ namespace Data.Base
             return await context.Set<T>().Where(func).ToListAsync();
         }
 
-        public Task Insert(T entity)
+        public async Task<T> Insert(T entity)
         {
-            throw new NotImplementedException();
+            context.Set<T>().Add(entity);
+            await context.SaveChangesAsync();
+            return entity;
         }
 
-        public void Update(Expression<Func<T, bool>> func, T entity)
+        public async Task<T> Update(Expression<Func<T, bool>> func, T entity)
         {
-            throw new NotImplementedException();
-        }
+            T existing = await context.Set<T>().Where(func).FirstOrDefaultAsync();
 
-        Task IGenericRepository<T>.Update(Expression<Func<T, bool>> func, T entity)
-        {
-            throw new NotImplementedException();
+            context.Entry(existing).CurrentValues.SetValues(entity);
+            await context.SaveChangesAsync();
+
+            return existing;
         }
     }
 }

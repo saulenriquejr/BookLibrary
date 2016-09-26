@@ -8,9 +8,9 @@ namespace Data.Base
 
     public interface IGenericRepository<T> where T : class
     {
-        Task Insert(T entity);
+        Task<T> Insert(T entity);
 
-        Task Update(Expression<Func<T, bool>> func, T entity);
+        Task<T> Update(Expression<Func<T, bool>> func, T entity);
 
         Task<int> Delete(Expression<Func<T, bool>> func);
 
