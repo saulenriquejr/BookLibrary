@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Library</h1>
+</div>
+
+<div class="row">
+    <div class="form-group col-md-6">
+        <label for="Author">Author</label>
+        <input type="text" class="form-control" id="Author" />
+    </div>
+    <div class="form-group col-md-6">
+        <label for="Category">Category</label>
+        <input type="text" class="form-control" id="Category" />
+    </div>
+</div>
+<div class="row">
+    <div class="form-group col-md-12">
+        <label>Books</label>
+    </div>
+</div>
+<div class="row">
+    <div class="form-group col-md-12">        
+        <table id="grid" class="table"></table>
+    </div>
+</div>
+<div class="row">
+    <div class="form-group col-md-3">
+        <input type="button" id="GetAllBooks" class="btn btn-info" value="Get All Books">
+    </div>
+    <div class="form-group col-md-3">
+        <input type="button" id="GetBooksByAuthor" class="btn btn-info" value="Get Books By Author">
+    </div>
+    <div class="form-group col-md-3">
+        <input type="button" id="GetBooksByCategory" class="btn btn-info" value="Get Books By Category">
+    </div>
+</div>
+
+@section scripts{
+    <script type="text/javascript" src="~/Scripts/Home.js"></script>
+}
