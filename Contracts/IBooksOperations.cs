@@ -14,7 +14,6 @@ namespace Contracts
         Task<IList<Book>> GetBooksByCategory(string category);
 
         Task<IList<Book>> GetBooksByAuthor(string category);
-
-        Task DeleteBook(int Id);
+        Task<int> DeleteBook(int Id);
     }
 }

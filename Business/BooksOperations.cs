@@ -16,24 +16,24 @@ namespace Business
             _bookRepository = genericRepository;
         }
 
-        public Task DeleteBook(int Id)
+        public async Task<int> DeleteBook(int Id)
         {
-            return _bookRepository.Delete(x => x.ID == Id);
+            return await _bookRepository.Delete(x => x.ID == Id);
         }
 
-        public Task<IList<Book>> GetAllBooks()
+        public async Task<IList<Book>> GetAllBooks()
         {
-            return _bookRepository.GetAll();
+            return await _bookRepository.GetAll();
         }
 
-        public Task<IList<Book>> GetBooksByAuthor(string author)
+        public async Task<IList<Book>> GetBooksByAuthor(string author)
         {
-            return _bookRepository.GetBy(b => b.Author == author);
+            return await _bookRepository.GetBy(b => b.Author == author);
         }
 
-        public Task<IList<Book>> GetBooksByCategory(string category)
+        public async Task<IList<Book>> GetBooksByCategory(string category)
         {
-            return _bookRepository.GetBy(b => b.Category == category);
+            return await _bookRepository.GetBy(b => b.Category == category);
         }
     }
 }
