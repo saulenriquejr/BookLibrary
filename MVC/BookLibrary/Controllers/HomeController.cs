@@ -52,7 +52,7 @@ namespace BookLibrary.Controllers
         [HttpDelete]
         public async Task<ActionResult> DeleteBook(int Id)
         {
-            await _booksOperations.Delete(Id);
+            await _booksOperations.DeleteBook(Id);
 
             return new HttpStatusCodeResult(HttpStatusCode.OK);
         }

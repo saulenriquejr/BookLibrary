@@ -16,7 +16,7 @@ namespace Business
             _bookRepository = genericRepository;
         }
 
-        public Task Delete(int Id)
+        public Task DeleteBook(int Id)
         {
             return _bookRepository.Delete(x => x.ID == Id);
         }
